@@ -1,4 +1,5 @@
-import { Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material'
+import { Drawer, Icon, IconButton, List, ListItemButton, ListItemIcon, ListItemText, useTheme, Typography } from '@mui/material'
+import LogoutIcon from '@mui/icons-material/Logout'
 import { Box } from '@mui/system'
 
 export const MenuLateral = ({children}) => {
@@ -7,18 +8,18 @@ export const MenuLateral = ({children}) => {
 		<>
 			<Drawer variant='permanent'>
 				<Box
-					width={theme.spacing(24)}
-					height="100%"
-					display="flex"
-					flexDirection="column"
+					width={theme.spacing(26)}
+					height='100%'
+					display='flex'
+					flexDirection='column'
 				>
 					<Box fex={1} >
-						<List component="nav">
+						<List component='nav'>
 							<ListItemButton>
 								<ListItemIcon>
 									<Icon>home</Icon>
 								</ListItemIcon>
-								<ListItemText primary="Home" />
+								<ListItemText primary='Home' />
 							</ListItemButton>
 							
 
@@ -26,11 +27,32 @@ export const MenuLateral = ({children}) => {
 					</Box>
 
 				</Box>
+				<Box				
+					display='flex'
+					justifyContent='flex-start'
+					alighItems='center'
+					margin='14px'
+					padding='12px 4px'
+					borderTop='1px solid lightgray'
+				>
+					<Box 
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+					>
+						<Typography>
+							NOME-USUARIO
+						</Typography>
 
+					</Box>
+					<IconButton >
+						<LogoutIcon/>
+					</IconButton>
+				</Box>
 			</Drawer>
-			<Box height="100vh" marginLeft={theme.spacing(24)}>
+			<Box height='100vh' marginLeft={theme.spacing(24)}>
 				{children}
-			</Box>
+			</Box>	
 
 		</>
 
